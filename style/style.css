@@ -1,5 +1,6 @@
 * {
     margin: 0;
+    padding: 0;
 }
 
 h1 {
@@ -7,15 +8,18 @@ h1 {
 }
 
 nav {
-    display: inline-block;
+    background-color: rgb(244, 244, 244);
+    display: flex;
     width: 100%;
     height: 70px;
-    position: fixed;
+    position: sticky;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 nav li {
     display: inline-block;
-    width: 19%;
+    width: 300px;
     height: 70px;
     text-align: center;
     line-height: 70px;
@@ -32,45 +36,58 @@ nav li {
 }
 section{
     text-align: center;
-
+    background-color: rgb(247, 197, 34);
 }
 
 section img{
-    margin-top: 70px;
-
-    height: 480px;
-    object-fit: cover;
-    
+    max-height: 600px;
+    max-width: 100%;
+    object-fit: contain;
 }
 
-.flex-container{
-    display:flex;
-    justify-content: center;
+.flex-box{
+    margin: 0 10%;
+}
+
+
+.list-photo-line{
+    display: flex;
+    /* flex: 0 0 25%; */
+    text-align: center;
+    list-style: none;
     flex-wrap: wrap;
 }
 
-@media (min-width:320px) and (max-width:600px){
-    .flex-container{
-        flex-direction: column;
-        
-        
-    }
-    .item {
-        flex: 1 1 100;
-        width:100%;
-    }
-    img{
-        width:100%;
-    }
+
+.list-item {
+    flex: 0 0 33.33%;
+    position: relative;
+    max-width: 33.33%;
 }
 
 .item {
-   
+    position: relative;
 }
 
-.item img {
-    width: 300px;
-
+.list-item img {
+    max-width: 100%;
+    height: auto;
     object-fit: contain; 
     border-radius: 20px;
 }
+
+@media (min-width:320px) and (max-width:600px) {
+    .list-item {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+@media (min-width:600px) and (max-width:900px) {
+    .list-item {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
+
+
